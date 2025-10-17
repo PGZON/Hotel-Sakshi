@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Sakshi - Fine Dining Experience</title>
+    
+    <!-- Meta for faster page loads -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Hotel Sakshi - Fine Dining Experience in Kolhapur">
+    
+    <!-- Critical resource preloading -->
+    <link rel="preload" href="Photo/Front-One.png" as="image">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- AOS removed for faster loading -->
+    
+    <!-- Critical CSS inlined for faster initial render -->
+    <style>
+        /* Critical path CSS for above-the-fold content */
+        :root {
+            --primary-color: #e67e22;
+            --white-color: #ffffff;
+            --dark-color: #2c3e50;
+            --overlay-color: rgba(0, 0, 0, 0.7);
+        }
+        body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff; z-index: 9999; display: flex; justify-content: center; align-items: center; }
+        .loader { width: 40px; height: 40px; border: 3px solid #ecf0f1; border-top: 3px solid #e67e22; border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: background-color 0.3s ease; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        #hero { height: 100vh; background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Photo/Front-One.png'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; }
+        .hero-content { max-width: 800px; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero-content h2 { font-size: 2rem; margin-bottom: 15px; color: var(--primary-color); }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    </style>
+    
+    <!-- Main stylesheets with non-render blocking loading -->
+    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/responsive.css" media="print" onload="this.media='all'">
+    
+    <noscript>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </noscript>
+    
+    <!-- Font Awesome optimized loading - only load when needed -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous">
+    
+    <!-- Google Fonts - optimized with limited weights and display=swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Fallback for browsers that don't support onload -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
+</head>
+<body>
+    <!-- Critical patch to prevent infinite loading -->
+    <script>document.documentElement.style.setProperty('--preloader-display', 'none');</script>
+    
+    <!-- Simple Preloader - will be hidden by default -->
+    <div id="preloader" style="display: none !important;">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="logo" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+                <a href="#hero"><h1>Hotel <span>Sakshi</span></h1></a>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-menu" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#specialties" class="nav-link">Specialties</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1 data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">Welcome to Hotel Sakshi</h1>
+            <h2 data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Authentic Flavors & Exquisite Dining</h2>
+            <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">Experience culinary excellence in the heart of Kolhapur</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
+                <a href="#menu" class="btn primary-btn hover-effect">Explore Menu</a>
+                <a href="#reservation" class="btn secondary-btn hover-effect">Book a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+                <h2>Our Story</h2>
+                <span class="divider"></span>
+            </div>
+            <div class="about-content">
+                <div class="about-img" data-aos="fade-right" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Restaurant Interior" class="hover-effect">
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
+                    <h3 data-aos="fade-up" data-aos-delay="400">Tradition Meets Innovation</h3>
+                    <p data-aos="fade-up" data-aos-delay="500">Founded in 2005, Hotel Sakshi has been serving authentic flavors and culinary excellence to our valued customers for over 15 years. Our journey began with a simple passion for food and hospitality.</p>
+                    <p data-aos="fade-up" data-aos-delay="600">At Hotel Sakshi, we believe in the perfect blend of traditional recipes and modern culinary techniques. Each dish is crafted with care, using locally sourced ingredients and age-old family recipes passed down through generations.</p>
+                    <p data-aos="fade-up" data-aos-delay="700">Our team of experienced chefs and friendly staff are committed to providing you with an unforgettable dining experience in a warm and welcoming atmosphere.</p>
+                    <a href="#specialties" class="btn primary-btn hover-effect" data-aos="zoom-in" data-aos-delay="800">Our Specialties</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+                <h2>Our Menu</h2>
+                <span class="divider"></span>
+                <p>Discover our carefully crafted selection of dishes</p>
+            </div>
+            <div class="menu-tabs">
+                <div class="menu-tab-header" data-aos="fade-up" data-aos-delay="200">
+                    <button class="menu-tab-btn active hover-effect" data-target="starters">Starters</button>
+                    <button class="menu-tab-btn hover-effect" data-target="mains">Main Course</button>
+                    <button class="menu-tab-btn hover-effect" data-target="desserts">Desserts</button>
+                    <button class="menu-tab-btn hover-effect" data-target="beverages">Beverages</button>
+                </div>
+                <div class="menu-tab-content" data-aos="fade-up" data-aos-delay="300">
+                    <div class="menu-category active" id="starters">
+                        <div class="menu-items">
+                            <div class="menu-item" data-aos="fade-up" data-aos-delay="400">
+                                <div class="menu-item-img hover-effect">
+                                    <img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Paneer Tikka">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Paneer Tikka <span class="price">₹220</span></h4>
+                                    <p>Marinated cottage cheese chunks grilled to perfection with bell peppers and onions</p>
+                                </div>
+                            </div>
+                            <div class="menu-item" data-aos="fade-up" data-aos-delay="500">
+                                <div class="menu-item-img hover-effect">
+                                    <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Veg Spring Rolls">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Veg Spring Rolls <span class="price">₹180</span></h4>
+                                    <p>Crispy rolls filled with mixed vegetables and served with sweet chili sauce</p>
+                                </div>
+                            </div>
+                            <div class="menu-item" data-aos="fade-up" data-aos-delay="600">
+                                <div class="menu-item-img hover-effect">
+                                    <img src="https://images.unsplash.com/photo-1625938144158-e9eca3822d85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Manchurian">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Veg Manchurian <span class="price">₹200</span></h4>
+                                    <p>Crispy vegetable dumplings tossed in a spicy and tangy sauce</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-category" id="mains">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-img">
+                                    <img src="https://images.unsplash.com/photo-1596797038530-2c107aa7e1f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80" alt="Butter Chicken">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Butter Chicken <span class="price">₹320</span></h4>
+                                    <p>Tender chicken pieces cooked in rich tomato gravy with butter and cream</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-img">
+                                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1036&q=80" alt="Paneer Butter Masala">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Paneer Butter Masala <span class="price">₹280</span></h4>
+                                    <p>Cottage cheese cubes in a creamy tomato and butter gravy</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-img">
+                                    <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Biryani">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Special Biryani <span class="price">₹260</span></h4>
+                                    <p>Fragrant basmati rice cooked with aromatic spices and your choice of vegetables or chicken</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-category" id="desserts">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-img">
+                                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Gulab Jamun">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Gulab Jamun <span class="price">₹120</span></h4>
+                                    <p>Soft milk dumplings soaked in sugar syrup, served warm</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-img">
+                                    <img src="https://images.unsplash.com/photo-1603356336047-1c46d420c7d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Ice Cream">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Ice Cream <span class="price">₹100</span></h4>
+                                    <p>Choice of flavors - Vanilla, Chocolate, Strawberry, or Butterscotch</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-img">
+                                    <img src="https://images.unsplash.com/photo-1600326145359-584446f0639e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Rasmalai">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Rasmalai <span class="price">₹140</span></h4>
+                                    <p>Soft cottage cheese patties soaked in sweetened, thickened milk flavored with cardamom</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-category" id="beverages">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-img">
+                                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1121&q=80" alt="Masala Chai">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Masala Chai <span class="price">₹60</span></h4>
+                                    <p>Traditional Indian spiced tea with milk</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-img">
+                                    <img src="https://images.unsplash.com/photo-1553787499-6f9133242821?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Fresh Fruit Juice">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Fresh Fruit Juice <span class="price">₹90</span></h4>
+                                    <p>Choose from Orange, Watermelon, Pineapple, or Mixed Fruit</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-img">
+                                    <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Lassi">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h4>Special Lassi <span class="price">₹110</span></h4>
+                                    <p>Traditional yogurt-based drink, available in sweet or salted varieties</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-download">
+                <a href="#" class="btn primary-btn">Download Full Menu <i class="fas fa-download"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section id="specialties" class="section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+                <h2>Our Specialties</h2>
+                <span class="divider"></span>
+                <p>Signature dishes that define our culinary expertise</p>
+            </div>
+            <div class="specialties-slider" data-aos="fade-up" data-aos-delay="200">
+                <div class="specialty-item" data-aos="flip-left" data-aos-delay="300">
+                    <div class="specialty-img hover-effect">
+                        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Kolhapuri Thali">
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Kolhapuri Special Thali</h3>
+                        <p>Experience the authentic taste of Kolhapur with our special thali that includes a variety of local delicacies, spicy curries, and traditional bread.</p>
+                        <span class="price">₹350</span>
+                    </div>
+                </div>
+                <div class="specialty-item" data-aos="flip-left" data-aos-delay="400">
+                    <div class="specialty-img hover-effect">
+                        <img src="https://images.unsplash.com/photo-1616645258469-ec681c17f3ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Chef's Special">
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Chef's Special Tandoori Platter</h3>
+                        <p>A delightful assortment of tandoori specialties, including paneer tikka, chicken tikka, seekh kebab, and tandoori vegetables.</p>
+                        <span class="price">₹450</span>
+                    </div>
+                </div>
+                <div class="specialty-item" data-aos="flip-left" data-aos-delay="500">
+                    <div class="specialty-img hover-effect">
+                        <img src="https://images.unsplash.com/photo-1571805618149-3a772570ebcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Dessert Platter">
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Sakshi Sweet Symphony</h3>
+                        <p>A delectable assortment of traditional Indian desserts, including gulab jamun, rasmalai, and gajar ka halwa.</p>
+                        <span class="price">₹280</span>
+                    </div>
+                </div>
+            </div>
+            <div class="specialty-controls" data-aos="fade-up" data-aos-delay="600">
+                <button class="specialty-prev hover-effect"><i class="fas fa-chevron-left"></i></button>
+                <button class="specialty-next hover-effect"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+                <h2>Gallery</h2>
+                <span class="divider"></span>
+                <p>Take a visual tour of our restaurant and dishes</p>
+            </div>
+            <div class="gallery-filter" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active hover-effect" data-filter="all">All</button>
+                <button class="filter-btn hover-effect" data-filter="restaurant">Restaurant</button>
+                <button class="filter-btn hover-effect" data-filter="food">Food</button>
+                <button class="filter-btn hover-effect" data-filter="events">Events</button>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item restaurant" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Restaurant Interior" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Elegant Dining Area</h3>
+                            <p>Main Restaurant</p>
+                            <a href="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="gallery-popup hover-effect" title="View Elegant Dining Area image"><i class="fas fa-search-plus"></i><span class="sr-only">View Elegant Dining Area image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item food" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80" alt="Food Item">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Paneer Special</h3>
+                            <p>Signature Dish</p>
+                            <a href="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80" class="gallery-popup hover-effect" title="View Paneer Special image"><i class="fas fa-search-plus"></i><span class="sr-only">View Paneer Special image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item restaurant" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Restaurant">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Restaurant Ambience</h3>
+                            <p>Evening Atmosphere</p>
+                            <a href="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="gallery-popup" title="View Restaurant Ambience image"><i class="fas fa-search-plus"></i><span class="sr-only">View Restaurant Ambience image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item food">
+                    <img src="https://images.unsplash.com/photo-1582824922073-c957ef1d6b9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" alt="Food Platter">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Indian Thali</h3>
+                            <p>Complete Meal</p>
+                            <a href="https://images.unsplash.com/photo-1582824922073-c957ef1d6b9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="gallery-popup" title="View Indian Thali image"><i class="fas fa-search-plus"></i><span class="sr-only">View Indian Thali image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item events">
+                    <img src="https://images.unsplash.com/photo-1561910819-c4ad0720400d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Event Setup">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Private Dining</h3>
+                            <p>Special Occasions</p>
+                            <a href="https://images.unsplash.com/photo-1561910819-c4ad0720400d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="gallery-popup" title="View Private Dining image"><i class="fas fa-search-plus"></i><span class="sr-only">View Private Dining image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item food">
+                    <img src="https://images.unsplash.com/photo-1606658293867-6a75a05802ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1168&q=80" alt="Desserts">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Sweet Delights</h3>
+                            <p>Dessert Selection</p>
+                            <a href="https://images.unsplash.com/photo-1606658293867-6a75a05802ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1168&q=80" class="gallery-popup" title="View Sweet Delights image"><i class="fas fa-search-plus"></i><span class="sr-only">View Sweet Delights image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item events">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Party Setup">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Corporate Event</h3>
+                            <p>Business Meetings</p>
+                            <a href="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="gallery-popup" title="View Corporate Event image"><i class="fas fa-search-plus"></i><span class="sr-only">View Corporate Event image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item restaurant">
+                    <img src="https://images.unsplash.com/photo-1513442542250-854d436a73f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=941&q=80" alt="Restaurant Decor">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Traditional Decor</h3>
+                            <p>Cultural Elements</p>
+                            <a href="https://images.unsplash.com/photo-1513442542250-854d436a73f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=941&q=80" class="gallery-popup" title="View Traditional Decor image"><i class="fas fa-search-plus"></i><span class="sr-only">View Traditional Decor image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- New Gallery Items -->
+                <div class="gallery-item food">
+                    <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1188&q=80" alt="Butter Chicken">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Butter Chicken</h3>
+                            <p>Our Bestseller</p>
+                            <a href="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1188&q=80" class="gallery-popup" title="View Butter Chicken image"><i class="fas fa-search-plus"></i><span class="sr-only">View Butter Chicken image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item restaurant">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Outdoor Dining">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Outdoor Dining</h3>
+                            <p>Garden Experience</p>
+                            <a href="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" class="gallery-popup" title="View Outdoor Dining image"><i class="fas fa-search-plus"></i><span class="sr-only">View Outdoor Dining image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item events">
+                    <img src="https://images.unsplash.com/photo-1635321593217-40050ad13c74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Wedding Reception">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Wedding Celebrations</h3>
+                            <p>Special Moments</p>
+                            <a href="https://images.unsplash.com/photo-1635321593217-40050ad13c74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="gallery-popup" title="View Wedding Celebrations image"><i class="fas fa-search-plus"></i><span class="sr-only">View Wedding Celebrations image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item food">
+                    <img src="https://images.unsplash.com/photo-1596797038530-2c107aa7e1f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80" alt="Chicken Curry">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Signature Curry</h3>
+                            <p>Chef's Special</p>
+                            <a href="https://images.unsplash.com/photo-1596797038530-2c107aa7e1f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80" class="gallery-popup" title="View Signature Curry image"><i class="fas fa-search-plus"></i><span class="sr-only">View Signature Curry image</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item restaurant">
+                    <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=985&q=80" alt="Bar Area">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Bar & Lounge</h3>
+                            <p>Evening Relaxation</p>
+                            <a href="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=985&q=80" class="gallery-popup" title="View Bar & Lounge image"><i class="fas fa-search-plus"></i><span class="sr-only">View Bar & Lounge image</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Guests Say</h2>
+                <span class="divider"></span>
+                <p>Feedback from our valued customers</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"Hotel Sakshi offers the most authentic local flavors I've ever experienced. The Kolhapuri special thali is a must-try for anyone visiting the city. The service is impeccable, and the ambience is perfect for both family dinners and business meetings."</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer">
+                            </div>
+                            <div class="author-info">
+                                <h4>Rahul Sharma</h4>
+                                <p>Regular Customer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"The vegetarian options at Hotel Sakshi are outstanding. As someone who has dietary restrictions, I was pleasantly surprised by the variety and taste of their vegetarian dishes. The staff was very accommodating and helped me choose dishes that suited my preferences."</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer">
+                            </div>
+                            <div class="author-info">
+                                <h4>Priya Patel</h4>
+                                <p>Food Blogger</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"We hosted our company's annual dinner at Hotel Sakshi, and it was a tremendous success. The event space was beautifully arranged, the food was delicious, and the staff was attentive to all our needs. Everyone in our team was impressed, and we'll definitely be back for future events."</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Customer">
+                            </div>
+                            <div class="author-info">
+                                <h4>Vijay Malhotra</h4>
+                                <p>Corporate Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-prev" title="Previous testimonial"><i class="fas fa-chevron-left"></i><span class="sr-only">Previous testimonial</span></button>
+                <button class="testimonial-next" title="Next testimonial"><i class="fas fa-chevron-right"></i><span class="sr-only">Next testimonial</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Book a Table</h2>
+                <span class="divider"></span>
+                <p>Reserve your dining experience with us</p>
+            </div>
+            <div class="reservation-content">
+                <div class="reservation-form">
+                    <form id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Number of Guests</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="">Select</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6+ People</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <input type="time" id="time" name="time" required>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">Special Requests</label>
+                            <textarea id="message" name="message" placeholder="Any special requests or preferences"></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn primary-btn">Book Now</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="reservation-img">
+                    <img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Restaurant Table">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Contact Us</h2>
+                <span class="divider" data-aos="zoom-in" data-aos-delay="200"></span>
+                <p data-aos="fade-up" data-aos-delay="300">We'd love to hear from you</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Address</h3>
+                            <p>Kagal-Murgud Road Kagal</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="300">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Call Us</h3>
+                            <p>+91 123-456-7890</p>
+                            <p>+91 987-654-3210</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="400">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email Us</h3>
+                            <p>info@hotelsakshi.com</p>
+                            <p>bookings@hotelsakshi.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="500">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Opening Hours</h3>
+                            <p>Monday - Sunday: 11:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-social" data-aos="fade-right" data-aos-delay="600">
+                        <h3>Connect With Us</h3>
+                        <div class="footer-social">
+                            <a href="#" title="Facebook" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+                            <a href="#" title="Instagram" data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
+                            <a href="#" title="Twitter" data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                            <a href="#" title="WhatsApp" data-aos="zoom-in" data-aos-delay="500"><i class="fab fa-whatsapp"></i><span class="sr-only">WhatsApp</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map" data-aos="zoom-in" data-aos-delay="300">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30591.540212738295!2d74.2984329!3d16.5794004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc0f9a03e98c803%3A0x43ab955dcb38aa12!2sHotel%20sakshi!5e0!3m2!1sen!2sin!4v1760709909700!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" title="Hotel Sakshi Location Map">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo" data-aos="fade-up" data-aos-delay="100">
+                    <h2>Hotel <span>Sakshi</span></h2>
+                    <p>Authentic flavors and exquisite dining experience</p>
+                    <div class="footer-social">
+                        <a href="#" title="Facebook" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+                        <a href="#" title="Instagram" data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
+                        <a href="#" title="Twitter" data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                        <a href="#" title="WhatsApp" data-aos="zoom-in" data-aos-delay="500"><i class="fab fa-whatsapp"></i><span class="sr-only">WhatsApp</span></a>
+                    </div>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li data-aos="fade-right" data-aos-delay="250"><a href="#hero">Home</a></li>
+                        <li data-aos="fade-right" data-aos-delay="300"><a href="#about">About Us</a></li>
+                        <li data-aos="fade-right" data-aos-delay="350"><a href="#menu">Menu</a></li>
+                        <li data-aos="fade-right" data-aos-delay="400"><a href="#specialties">Specialties</a></li>
+                        <li data-aos="fade-right" data-aos-delay="450"><a href="#gallery">Gallery</a></li>
+                        <li data-aos="fade-right" data-aos-delay="500"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Opening Hours</h3>
+                    <ul>
+                        <li data-aos="fade-left" data-aos-delay="250">Monday - Friday: 11:00 AM - 11:00 PM</li>
+                        <li data-aos="fade-left" data-aos-delay="300">Saturday - Sunday: 10:00 AM - 11:30 PM</li>
+                        <li data-aos="fade-left" data-aos-delay="350">Holiday Hours: 12:00 PM - 10:00 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-contact" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li data-aos="fade-left" data-aos-delay="250"><i class="fas fa-map-marker-alt"></i> Kagal-Murgud Road Kagal</li>
+                        <li data-aos="fade-left" data-aos-delay="300"><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li data-aos="fade-left" data-aos-delay="350"><i class="fas fa-envelope"></i> info@hotelsakshi.com</li>
+                    </ul>
+                    <div class="footer-map" data-aos="zoom-in" data-aos-delay="400">
+                        <a href="https://maps.google.com/?q=Kagal-Murgud+Road+Kagal" target="_blank" title="View on Google Maps">View on Google Maps</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider" data-aos="fade" data-aos-delay="100"></div>
+            <div class="footer-bottom">
+                <p data-aos="fade-right" data-aos-delay="100">&copy; 2025 Hotel Sakshi. All Rights Reserved.</p>
+                <div class="footer-payments" data-aos="fade-left" data-aos-delay="100">
+                    <span>We Accept:</span>
+                    <img src="https://via.placeholder.com/200x30/ffffff/000000?text=Payment+Methods" alt="Payment Methods" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="hover-effect" title="Back to top" data-aos="fade-up" data-aos-offset="0" data-aos-duration="1200"><i class="fas fa-chevron-up"></i><span class="sr-only">Back to top</span></a>
+
+    <!-- Scripts - optimized with module loading for faster page loading -->
+    <script src="js/main.js" defer async></script>
+    
+    <!-- Inline script for critical functionality -->
+    <script>
+        // Performance metrics
+        var pageStartTime = new Date().getTime();
+        
+        // IMMEDIATE preloader removal (most important fix)
+        (function() {
+            // Force hide preloader immediately
+            document.getElementById('preloader').style.display = 'none';
+        })();
+        
+        // Log performance for monitoring
+        window.addEventListener('load', function() {
+            var loadTime = new Date().getTime() - pageStartTime;
+            console.log('Page loaded in: ' + loadTime + 'ms');
+            
+            // Report to analytics if needed
+            if (window.performance) {
+                var perfData = window.performance.timing;
+                var pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log("Page full load time: " + pageLoadTime + "ms");
+            }
+        });
+    </script>
+    
+    <!-- No AOS for better performance - we'll add it back once the basic page loads correctly -->
+    <script>
+        // Simple fade-in effect for elements that would use AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add basic fade-in to elements that would use AOS
+            document.querySelectorAll('[data-aos]').forEach(function(el) {
+                el.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html>

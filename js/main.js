@@ -1,96 +1,42 @@
-// Apply lazy loading to all images except the hero section for better performance
-function applyLazyLoading() {
-    // Target all images except preloaded critical images
-    const images = document.querySelectorAll('img:not([data-critical])');
+// Lazy load images for better performance
+function lazyLoadImages() {
+    const lazyImages = document.querySelectorAll('img[data-src]');
     
-    // Add loading="lazy" attribute to all images
-    images.forEach(img => {
-        if (!img.hasAttribute('loading')) {
-            img.setAttribute('loading', 'lazy');
-        }
-        
-        // Convert large images to webp format where possible by adding srcset
-        if (img.src.includes('unsplash.com')) {
-            // Create a webp URL from the original URL if it's from Unsplash
-            const webpUrl = img.src.includes('&fm=') 
-                ? img.src.replace(/&fm=[^&]+/, '&fm=webp') 
-                : img.src + '&fm=webp';
-            
-            // Add srcset for better performance
-            img.setAttribute('srcset', `${webpUrl} 1x`);
-        }
-    });
-}
-
-// Optimize image size and quality
-function optimizeImageRequests() {
-    const imgLinks = document.querySelectorAll('a.gallery-popup');
-    imgLinks.forEach(link => {
-        // Only open full-size images when clicked, not on page load
-        const originalHref = link.getAttribute('href');
-        link.setAttribute('data-full-img', originalHref);
-        link.setAttribute('href', 'javascript:void(0)');
-        
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const fullImg = this.getAttribute('data-full-img');
-            if (fullImg) {
-                window.open(fullImg, '_blank');
-            }
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    imageObserver.unobserve(img);
+                }
+            });
         });
-    });
+        
+        lazyImages.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+        });
+    }
 }
 
-// Preloader
+// Preloader - hide quickly for faster perceived load time
+window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.style.display = 'none';
+        }
+    }, 500);
+});
+
+// Lazy load images after page is ready
 window.addEventListener('load', function() {
-    document.getElementById('preloader').style.display = 'none';
-    
-    // Apply lazy loading to all images
-    applyLazyLoading();
-    
-    // Optimize image requests
-    optimizeImageRequests();
-    
-    // Setup 10-second timer for hero content updates
-    const heroHeadings = [
-        "Authentic Flavors & Exquisite Dining",
-        "Traditional Recipes with Modern Touch",
-        "Experience Culinary Excellence",
-        "Unforgettable Dining Experience",
-        "Taste the Rich Flavors of Kolhapur"
-    ];
-    
-    const heroTexts = [
-        "Experience culinary excellence in the heart of Kolhapur",
-        "Enjoy the perfect blend of tradition and innovation",
-        "Serving the finest local and international cuisine since 2005",
-        "Where every meal tells a story of flavor and passion",
-        "Creating memories one dish at a time"
-    ];
-    
-    let currentIndex = 0;
-    const heroSubheading = document.querySelector('#hero h2');
-    const heroParagraph = document.querySelector('#hero p');
-    
-    setInterval(function() {
-        currentIndex = (currentIndex + 1) % heroHeadings.length;
-        
-        if (heroSubheading) {
-            heroSubheading.style.opacity = 0;
-            setTimeout(() => {
-                heroSubheading.textContent = heroHeadings[currentIndex];
-                heroSubheading.style.opacity = 1;
-            }, 500);
-        }
-        
-        if (heroParagraph) {
-            heroParagraph.style.opacity = 0;
-            setTimeout(() => {
-                heroParagraph.textContent = heroTexts[currentIndex];
-                heroParagraph.style.opacity = 1;
-            }, 500);
-        }
-    }, 10000);
+    lazyLoadImages();
 });
 
 document.addEventListener('DOMContentLoaded', function() {

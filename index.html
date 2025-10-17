@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Sakshi - Fine Dining Experience</title>
+    <title>हॉटेल साक्षी - Fine Dining Experience</title>
+    
+    <!-- Preconnect to CDN for faster icon loading -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     
     <!-- Preload hero image for faster loading -->
     <link rel="preload" href="Photo/Front-One.png" as="image">
     
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- Font Awesome - loaded asynchronously for better performance -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </noscript>
     
     <!-- Critical CSS inlined for faster initial render -->
     <style>
@@ -22,7 +26,7 @@
             --dark-color: #2c3e50;
             --overlay-color: rgba(0, 0, 0, 0.7);
         }
-        body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
         #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff; z-index: 9999; display: flex; justify-content: center; align-items: center; }
         .loader { width: 40px; height: 40px; border: 3px solid #ecf0f1; border-top: 3px solid #e67e22; border-radius: 50%; animation: spin 0.8s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
@@ -30,31 +34,16 @@
         .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
         #hero { height: 100vh; background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Photo/Front-One.png'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; }
         .hero-content { max-width: 800px; }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
-        .hero-content h2 { font-size: 2rem; margin-bottom: 15px; color: var(--primary-color); }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; font-family: Georgia, serif; }
+        .hero-content h2 { font-size: 2rem; margin-bottom: 15px; color: var(--primary-color); font-family: Georgia, serif; }
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+        /* Lazy load placeholder */
+        img[data-src] { background: #f0f0f0; min-height: 200px; }
     </style>
     
-    <!-- Main stylesheets with non-render blocking loading -->
-    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/responsive.css" media="print" onload="this.media='all'">
-    
-    <noscript>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
-    </noscript>
-    
-    <!-- Font Awesome with defer loading -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
-    
-    <!-- Google Fonts with display=swap for faster rendering -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    
-    <!-- Fallback for browsers that don't support onload -->
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    </noscript>
+    <!-- Main stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <!-- Preloader -->
@@ -66,7 +55,7 @@
     <header id="header">
         <div class="container">
             <div class="logo">
-                <a href="#hero"><h1>Hotel <span>Sakshi</span></h1></a>
+                <a href="#hero"><h1>हॉटेल<span> साक्षी</span></h1></a>
             </div>
             <nav class="navbar">
                 <ul class="nav-menu">
@@ -89,7 +78,7 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
-            <h1>Welcome to Hotel Sakshi</h1>
+            <h1>Welcome to हॉटेल साक्षी</h1>
             <h2>Authentic Flavors & Exquisite Dining</h2>
             <p>Experience culinary excellence in the heart of Kolhapur</p>
             <div class="hero-buttons">
@@ -108,7 +97,7 @@
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Restaurant Interior">
+                    <img data-src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=60" alt="Restaurant Interior" loading="lazy">
                 </div>
                 <div class="about-text">
                     <h3>Tradition Meets Innovation</h3>
@@ -141,7 +130,7 @@
                         <div class="menu-items">
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Paneer Tikka">
+                                    <img data-src="https://images.unsplash.com/photo-1574653853027-5382a3d23a7d?w=400&q=50" alt="Paneer Tikka" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Paneer Tikka <span class="price">₹220</span></h4>
@@ -150,7 +139,7 @@
                             </div>
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Veg Spring Rolls">
+                                    <img data-src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&q=50" alt="Veg Spring Rolls" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Veg Spring Rolls <span class="price">₹180</span></h4>
@@ -159,7 +148,7 @@
                             </div>
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1625938144158-e9eca3822d85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Manchurian">
+                                    <img data-src="https://images.unsplash.com/photo-1625938144158-e9eca3822d85?w=400&q=50" alt="Manchurian" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Veg Manchurian <span class="price">₹200</span></h4>
@@ -172,7 +161,7 @@
                         <div class="menu-items">
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1596797038530-2c107aa7e1f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80" alt="Butter Chicken">
+                                    <img data-src="https://images.unsplash.com/photo-1596797038530-2c107aa7e1f9?w=400&q=50" alt="Butter Chicken" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Butter Chicken <span class="price">₹320</span></h4>
@@ -181,7 +170,7 @@
                             </div>
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1036&q=80" alt="Paneer Butter Masala">
+                                    <img data-src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=50" alt="Paneer Butter Masala" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Paneer Butter Masala <span class="price">₹280</span></h4>
@@ -190,7 +179,7 @@
                             </div>
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Biryani">
+                                    <img data-src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&q=50" alt="Biryani" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Special Biryani <span class="price">₹260</span></h4>
@@ -203,7 +192,7 @@
                         <div class="menu-items">
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Gulab Jamun">
+                                    <img data-src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&q=50" alt="Gulab Jamun" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Gulab Jamun <span class="price">₹120</span></h4>
@@ -212,7 +201,7 @@
                             </div>
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1603356336047-1c46d420c7d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Ice Cream">
+                                    <img data-src="https://images.unsplash.com/photo-1603356336047-1c46d420c7d8?w=400&q=50" alt="Ice Cream" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Ice Cream <span class="price">₹100</span></h4>
@@ -221,7 +210,7 @@
                             </div>
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1600326145359-584446f0639e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Rasmalai">
+                                    <img data-src="https://images.unsplash.com/photo-1600326145359-584446f0639e?w=400&q=50" alt="Rasmalai" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Rasmalai <span class="price">₹140</span></h4>
@@ -234,7 +223,7 @@
                         <div class="menu-items">
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1121&q=80" alt="Masala Chai">
+                                    <img data-src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&q=50" alt="Masala Chai" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Masala Chai <span class="price">₹60</span></h4>
@@ -243,7 +232,7 @@
                             </div>
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1553787499-6f9133242821?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Fresh Fruit Juice">
+                                    <img data-src="https://images.unsplash.com/photo-1553787499-6f9133242821?w=400&q=50" alt="Fresh Fruit Juice" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Fresh Fruit Juice <span class="price">₹90</span></h4>
@@ -252,7 +241,7 @@
                             </div>
                             <div class="menu-item">
                                 <div class="menu-item-img">
-                                    <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Lassi">
+                                    <img data-src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=400&q=50" alt="Lassi" loading="lazy">
                                 </div>
                                 <div class="menu-item-details">
                                     <h4>Special Lassi <span class="price">₹110</span></h4>
@@ -280,7 +269,7 @@
             <div class="specialties-slider">
                 <div class="specialty-item">
                     <div class="specialty-img">
-                        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Kolhapuri Thali">
+                        <img data-src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&q=50" alt="Kolhapuri Thali" loading="lazy">
                     </div>
                     <div class="specialty-content">
                         <h3>Kolhapuri Special Thali</h3>
@@ -290,7 +279,7 @@
                 </div>
                 <div class="specialty-item">
                     <div class="specialty-img">
-                        <img src="https://images.unsplash.com/photo-1616645258469-ec681c17f3ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Chef's Special">
+                        <img data-src="https://images.unsplash.com/photo-1616645258469-ec681c17f3ee?w=400&q=50" alt="Chef's Special" loading="lazy">
                     </div>
                     <div class="specialty-content">
                         <h3>Chef's Special Tandoori Platter</h3>
@@ -300,7 +289,7 @@
                 </div>
                 <div class="specialty-item">
                     <div class="specialty-img">
-                        <img src="https://images.unsplash.com/photo-1571805618149-3a772570ebcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Dessert Platter">
+                        <img data-src="https://images.unsplash.com/photo-1571805618149-3a772570ebcd?w=400&q=50" alt="Dessert Platter" loading="lazy">
                     </div>
                     <div class="specialty-content">
                         <h3>Sakshi Sweet Symphony</h3>
@@ -332,7 +321,7 @@
             </div>
             <div class="gallery-container">
                 <div class="gallery-item restaurant">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Restaurant Interior" loading="lazy">
+                    <img data-src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=50" alt="Restaurant Interior" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Elegant Dining Area</h3>
@@ -342,7 +331,7 @@
                     </div>
                 </div>
                 <div class="gallery-item food">
-                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80" alt="Food Item">
+                    <img data-src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=50" alt="Food Item" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Paneer Special</h3>
@@ -352,7 +341,7 @@
                     </div>
                 </div>
                 <div class="gallery-item restaurant">
-                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Restaurant">
+                    <img data-src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=50" alt="Restaurant" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Restaurant Ambience</h3>
@@ -362,7 +351,7 @@
                     </div>
                 </div>
                 <div class="gallery-item food">
-                    <img src="https://images.unsplash.com/photo-1582824922073-c957ef1d6b9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" alt="Food Platter">
+                    <img data-src="https://images.unsplash.com/photo-1582824922073-c957ef1d6b9c?w=400&q=50" alt="Food Platter" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Indian Thali</h3>
@@ -372,7 +361,7 @@
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="https://images.unsplash.com/photo-1561910819-c4ad0720400d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Event Setup">
+                    <img data-src="https://images.unsplash.com/photo-1561910819-c4ad0720400d?w=400&q=50" alt="Event Setup" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Private Dining</h3>
@@ -382,7 +371,7 @@
                     </div>
                 </div>
                 <div class="gallery-item food">
-                    <img src="https://images.unsplash.com/photo-1606658293867-6a75a05802ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1168&q=80" alt="Desserts">
+                    <img data-src="https://images.unsplash.com/photo-1606658293867-6a75a05802ce?w=400&q=50" alt="Desserts" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Sweet Delights</h3>
@@ -392,7 +381,7 @@
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Party Setup">
+                    <img data-src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&q=50" alt="Party Setup" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Corporate Event</h3>
@@ -402,7 +391,7 @@
                     </div>
                 </div>
                 <div class="gallery-item restaurant">
-                    <img src="https://images.unsplash.com/photo-1513442542250-854d436a73f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=941&q=80" alt="Restaurant Decor">
+                    <img data-src="https://images.unsplash.com/photo-1513442542250-854d436a73f2?w=400&q=50" alt="Restaurant Decor" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Traditional Decor</h3>
@@ -413,7 +402,7 @@
                 </div>
                 <!-- New Gallery Items -->
                 <div class="gallery-item food">
-                    <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1188&q=80" alt="Butter Chicken">
+                    <img data-src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=400&q=50" alt="Butter Chicken" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Butter Chicken</h3>
@@ -423,7 +412,7 @@
                     </div>
                 </div>
                 <div class="gallery-item restaurant">
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Outdoor Dining">
+                    <img data-src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=50" alt="Outdoor Dining" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Outdoor Dining</h3>
@@ -433,7 +422,7 @@
                     </div>
                 </div>
                 <div class="gallery-item events">
-                    <img src="https://images.unsplash.com/photo-1635321593217-40050ad13c74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Wedding Reception">
+                    <img data-src="https://images.unsplash.com/photo-1635321593217-40050ad13c74?w=400&q=50" alt="Wedding Reception" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Wedding Celebrations</h3>
@@ -443,7 +432,7 @@
                     </div>
                 </div>
                 <div class="gallery-item food">
-                    <img src="https://images.unsplash.com/photo-1596797038530-2c107aa7e1f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80" alt="Chicken Curry">
+                    <img data-src="https://images.unsplash.com/photo-1596797038530-2c107aa7e1f9?w=400&q=50" alt="Chicken Curry" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Signature Curry</h3>
@@ -453,7 +442,7 @@
                     </div>
                 </div>
                 <div class="gallery-item restaurant">
-                    <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=985&q=80" alt="Bar Area">
+                    <img data-src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=400&q=50" alt="Bar Area" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Bar & Lounge</h3>
@@ -490,7 +479,7 @@
                         </div>
                         <div class="testimonial-author">
                             <div class="author-img">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" loading="lazy">
                             </div>
                             <div class="author-info">
                                 <h4>Rahul Sharma</h4>
@@ -514,7 +503,7 @@
                         </div>
                         <div class="testimonial-author">
                             <div class="author-img">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" loading="lazy">
                             </div>
                             <div class="author-info">
                                 <h4>Priya Patel</h4>
@@ -538,7 +527,7 @@
                         </div>
                         <div class="testimonial-author">
                             <div class="author-img">
-                                <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Customer">
+                                <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Customer" loading="lazy">
                             </div>
                             <div class="author-info">
                                 <h4>Vijay Malhotra</h4>
@@ -614,7 +603,7 @@
                     </form>
                 </div>
                 <div class="reservation-img">
-                    <img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Restaurant Table">
+                    <img data-src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=400&q=50" alt="Restaurant Table" loading="lazy">
                 </div>
             </div>
         </div>
@@ -690,7 +679,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h2>Hotel <span>Sakshi</span></h2>
+                    <h2>हॉटेल<span> साक्षी</span></h2>
                     <p>Authentic flavors and exquisite dining experience</p>
                 </div>
                 <div class="footer-links">
@@ -714,10 +703,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Hotel Sakshi. All Rights Reserved.</p>
+                <p>&copy; 2025 हॉटेल साक्षी. All Rights Reserved.</p>
                 <div class="footer-payments">
                     <span>We Accept:</span>
-                    <img src="https://via.placeholder.com/200x30/ffffff/000000?text=Payment+Methods" alt="Payment Methods">
+                    <img src="https://via.placeholder.com/200x30/ffffff/000000?text=Payment+Methods" alt="Payment Methods" loading="lazy">
                 </div>
             </div>
         </div>
@@ -727,44 +716,6 @@
     <a href="#" id="back-to-top" title="Back to top"><i class="fas fa-chevron-up"></i><span class="sr-only">Back to top</span></a>
 
     <!-- Scripts - deferred for faster page loading -->
-    <script src="js/main.js" defer></script>
-    
-    <!-- Inline script for critical functionality -->
-    <script>
-        // Remove preloader as soon as possible for better user experience
-        function hidePreloader() {
-            var preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.style.opacity = '0';
-                setTimeout(function() {
-                    preloader.style.display = 'none';
-                }, 300);
-            }
-        }
-        
-        // Add page load time measurement
-        var pageStartTime = new Date().getTime();
-        
-        // Handle preloader removal
-        window.addEventListener('load', hidePreloader);
-        
-        // Fallback in case load event already fired
-        if (document.readyState === 'complete') {
-            hidePreloader();
-        }
-        
-        // Start loading critical resources early
-        var link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'script';
-        link.href = 'js/main.js';
-        document.head.appendChild(link);
-        
-        // Log page load time for performance monitoring
-        window.addEventListener('load', function() {
-            var loadTime = new Date().getTime() - pageStartTime;
-            console.log('Page loaded in: ' + loadTime + 'ms');
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

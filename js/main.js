@@ -1,61 +1,49 @@
-// Simplified image loading - prioritizing reliability over optimization
+// Apply lazy loading to all images except the hero section for better performance
 function applyLazyLoading() {
-    // Basic native lazy loading - most reliable approach
-    document.querySelectorAll('img').forEach(img => {
-        // Restore any data-src images to their original src
-        if (img.dataset.src) {
-            img.src = img.dataset.src;
-        }
-        
-        // Add native lazy loading to non-critical images
-        if (!img.hasAttribute('data-critical') && !img.hasAttribute('loading')) {
+    // Target all images except preloaded critical images
+    const images = document.querySelectorAll('img:not([data-critical])');
+    
+    // Add loading="lazy" attribute to all images
+    images.forEach(img => {
+        if (!img.hasAttribute('loading')) {
             img.setAttribute('loading', 'lazy');
         }
         
-        // Remove any placeholder SVG images
-        if (img.src && img.src.includes('data:image/svg')) {
-            if (img.dataset.src) {
-                img.src = img.dataset.src;
-            }
+        // Convert large images to webp format where possible by adding srcset
+        if (img.src.includes('unsplash.com')) {
+            // Create a webp URL from the original URL if it's from Unsplash
+            const webpUrl = img.src.includes('&fm=') 
+                ? img.src.replace(/&fm=[^&]+/, '&fm=webp') 
+                : img.src + '&fm=webp';
+            
+            // Add srcset for better performance
+            img.setAttribute('srcset', `${webpUrl} 1x`);
         }
-    });
-    
-    // Fix any broken images
-    document.querySelectorAll('img').forEach(img => {
-        img.onerror = function() {
-            // If image fails to load, try to use data-src as fallback
-            if (this.dataset.src && this.src !== this.dataset.src) {
-                this.src = this.dataset.src;
-            }
-        };
     });
 }
 
-// Simplified image handling - direct links for faster loading
+// Optimize image size and quality
 function optimizeImageRequests() {
-    // Make gallery popups work directly for better reliability
     const imgLinks = document.querySelectorAll('a.gallery-popup');
-    
     imgLinks.forEach(link => {
-        // Restore original href if it was changed
-        if (link.dataset.fullImg) {
-            link.href = link.dataset.fullImg;
-        }
+        // Only open full-size images when clicked, not on page load
+        const originalHref = link.getAttribute('href');
+        link.setAttribute('data-full-img', originalHref);
+        link.setAttribute('href', 'javascript:void(0)');
         
-        // Ensure all links open in a new tab
-        link.setAttribute('target', '_blank');
-        link.setAttribute('rel', 'noopener');
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const fullImg = this.getAttribute('data-full-img');
+            if (fullImg) {
+                window.open(fullImg, '_blank');
+            }
+        });
     });
 }
 
-// Page load handler
+// Preloader
 window.addEventListener('load', function() {
-    // Handle preloader - force hide
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.style.opacity = '0';
-        preloader.style.display = 'none';
-    }
+    document.getElementById('preloader').style.display = 'none';
     
     // Apply lazy loading to all images
     applyLazyLoading();
@@ -397,16 +385,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Initialize AOS (Animate On Scroll) with custom settings
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,           // Animation duration
-            easing: 'ease-in-out',   // Animation easing
-            once: false,             // Whether animation should happen only once
-            mirror: true,            // Whether elements should animate out while scrolling past them
-            anchorPlacement: 'top-bottom', // Define which position of the element regarding to window should trigger the animation
-            offset: 120              // Offset (in px) from the original trigger point
-        });
-    }
 });

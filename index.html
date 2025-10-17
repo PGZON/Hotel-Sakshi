@@ -5,24 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Sakshi - Fine Dining Experience</title>
     
-    <!-- Meta for faster page loads -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Hotel Sakshi - Fine Dining Experience in Kolhapur">
-    
-    <!-- Critical resource preloading -->
+    <!-- Preload hero image for faster loading -->
     <link rel="preload" href="Photo/Front-One.png" as="image">
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="preload" href="js/main.js" as="script">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
-    
-    <!-- AOS removed for faster loading -->
     
     <!-- Critical CSS inlined for faster initial render -->
     <style>
@@ -55,36 +44,32 @@
         <link rel="stylesheet" href="css/responsive.css">
     </noscript>
     
-    <!-- Font Awesome optimized loading - only load when needed -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous">
+    <!-- Font Awesome with defer loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     
-    <!-- Google Fonts - optimized with limited weights and display=swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- Google Fonts with display=swap for faster rendering -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
     <!-- Fallback for browsers that don't support onload -->
     <noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     </noscript>
 </head>
 <body>
-    <!-- Critical patch to prevent infinite loading -->
-    <script>document.documentElement.style.setProperty('--preloader-display', 'none');</script>
-    
-    <!-- Simple Preloader - will be hidden by default -->
-    <div id="preloader" style="display: none !important;">
+    <!-- Preloader -->
+    <div id="preloader">
         <div class="loader"></div>
     </div>
 
     <!-- Header -->
     <header id="header">
         <div class="container">
-            <div class="logo" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+            <div class="logo">
                 <a href="#hero"><h1>Hotel <span>Sakshi</span></h1></a>
             </div>
             <nav class="navbar">
-                <ul class="nav-menu" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+                <ul class="nav-menu">
                     <li><a href="#hero" class="nav-link active">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#menu" class="nav-link">Menu</a></li>
@@ -104,12 +89,12 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
-            <h1 data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">Welcome to Hotel Sakshi</h1>
-            <h2 data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Authentic Flavors & Exquisite Dining</h2>
-            <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">Experience culinary excellence in the heart of Kolhapur</p>
-            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
-                <a href="#menu" class="btn primary-btn hover-effect">Explore Menu</a>
-                <a href="#reservation" class="btn secondary-btn hover-effect">Book a Table</a>
+            <h1>Welcome to Hotel Sakshi</h1>
+            <h2>Authentic Flavors & Exquisite Dining</h2>
+            <p>Experience culinary excellence in the heart of Kolhapur</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn primary-btn">Explore Menu</a>
+                <a href="#reservation" class="btn secondary-btn">Book a Table</a>
             </div>
         </div>
     </section>
@@ -117,20 +102,20 @@
     <!-- About Section -->
     <section id="about" class="section-padding">
         <div class="container">
-            <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+            <div class="section-header">
                 <h2>Our Story</h2>
                 <span class="divider"></span>
             </div>
             <div class="about-content">
-                <div class="about-img" data-aos="fade-right" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Restaurant Interior" class="hover-effect">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Restaurant Interior">
                 </div>
-                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
-                    <h3 data-aos="fade-up" data-aos-delay="400">Tradition Meets Innovation</h3>
-                    <p data-aos="fade-up" data-aos-delay="500">Founded in 2005, Hotel Sakshi has been serving authentic flavors and culinary excellence to our valued customers for over 15 years. Our journey began with a simple passion for food and hospitality.</p>
-                    <p data-aos="fade-up" data-aos-delay="600">At Hotel Sakshi, we believe in the perfect blend of traditional recipes and modern culinary techniques. Each dish is crafted with care, using locally sourced ingredients and age-old family recipes passed down through generations.</p>
-                    <p data-aos="fade-up" data-aos-delay="700">Our team of experienced chefs and friendly staff are committed to providing you with an unforgettable dining experience in a warm and welcoming atmosphere.</p>
-                    <a href="#specialties" class="btn primary-btn hover-effect" data-aos="zoom-in" data-aos-delay="800">Our Specialties</a>
+                <div class="about-text">
+                    <h3>Tradition Meets Innovation</h3>
+                    <p>Founded in 2005, Hotel Sakshi has been serving authentic flavors and culinary excellence to our valued customers for over 15 years. Our journey began with a simple passion for food and hospitality.</p>
+                    <p>At Hotel Sakshi, we believe in the perfect blend of traditional recipes and modern culinary techniques. Each dish is crafted with care, using locally sourced ingredients and age-old family recipes passed down through generations.</p>
+                    <p>Our team of experienced chefs and friendly staff are committed to providing you with an unforgettable dining experience in a warm and welcoming atmosphere.</p>
+                    <a href="#specialties" class="btn primary-btn">Our Specialties</a>
                 </div>
             </div>
         </div>
@@ -139,23 +124,23 @@
     <!-- Menu Section -->
     <section id="menu" class="section-padding bg-light">
         <div class="container">
-            <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+            <div class="section-header">
                 <h2>Our Menu</h2>
                 <span class="divider"></span>
                 <p>Discover our carefully crafted selection of dishes</p>
             </div>
             <div class="menu-tabs">
-                <div class="menu-tab-header" data-aos="fade-up" data-aos-delay="200">
-                    <button class="menu-tab-btn active hover-effect" data-target="starters">Starters</button>
-                    <button class="menu-tab-btn hover-effect" data-target="mains">Main Course</button>
-                    <button class="menu-tab-btn hover-effect" data-target="desserts">Desserts</button>
-                    <button class="menu-tab-btn hover-effect" data-target="beverages">Beverages</button>
+                <div class="menu-tab-header">
+                    <button class="menu-tab-btn active" data-target="starters">Starters</button>
+                    <button class="menu-tab-btn" data-target="mains">Main Course</button>
+                    <button class="menu-tab-btn" data-target="desserts">Desserts</button>
+                    <button class="menu-tab-btn" data-target="beverages">Beverages</button>
                 </div>
-                <div class="menu-tab-content" data-aos="fade-up" data-aos-delay="300">
+                <div class="menu-tab-content">
                     <div class="menu-category active" id="starters">
                         <div class="menu-items">
-                            <div class="menu-item" data-aos="fade-up" data-aos-delay="400">
-                                <div class="menu-item-img hover-effect">
+                            <div class="menu-item">
+                                <div class="menu-item-img">
                                     <img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Paneer Tikka">
                                 </div>
                                 <div class="menu-item-details">
@@ -163,8 +148,8 @@
                                     <p>Marinated cottage cheese chunks grilled to perfection with bell peppers and onions</p>
                                 </div>
                             </div>
-                            <div class="menu-item" data-aos="fade-up" data-aos-delay="500">
-                                <div class="menu-item-img hover-effect">
+                            <div class="menu-item">
+                                <div class="menu-item-img">
                                     <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Veg Spring Rolls">
                                 </div>
                                 <div class="menu-item-details">
@@ -172,8 +157,8 @@
                                     <p>Crispy rolls filled with mixed vegetables and served with sweet chili sauce</p>
                                 </div>
                             </div>
-                            <div class="menu-item" data-aos="fade-up" data-aos-delay="600">
-                                <div class="menu-item-img hover-effect">
+                            <div class="menu-item">
+                                <div class="menu-item-img">
                                     <img src="https://images.unsplash.com/photo-1625938144158-e9eca3822d85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Manchurian">
                                 </div>
                                 <div class="menu-item-details">
@@ -287,14 +272,14 @@
     <!-- Specialties Section -->
     <section id="specialties" class="section-padding">
         <div class="container">
-            <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+            <div class="section-header">
                 <h2>Our Specialties</h2>
                 <span class="divider"></span>
                 <p>Signature dishes that define our culinary expertise</p>
             </div>
-            <div class="specialties-slider" data-aos="fade-up" data-aos-delay="200">
-                <div class="specialty-item" data-aos="flip-left" data-aos-delay="300">
-                    <div class="specialty-img hover-effect">
+            <div class="specialties-slider">
+                <div class="specialty-item">
+                    <div class="specialty-img">
                         <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Kolhapuri Thali">
                     </div>
                     <div class="specialty-content">
@@ -303,8 +288,8 @@
                         <span class="price">₹350</span>
                     </div>
                 </div>
-                <div class="specialty-item" data-aos="flip-left" data-aos-delay="400">
-                    <div class="specialty-img hover-effect">
+                <div class="specialty-item">
+                    <div class="specialty-img">
                         <img src="https://images.unsplash.com/photo-1616645258469-ec681c17f3ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Chef's Special">
                     </div>
                     <div class="specialty-content">
@@ -313,8 +298,8 @@
                         <span class="price">₹450</span>
                     </div>
                 </div>
-                <div class="specialty-item" data-aos="flip-left" data-aos-delay="500">
-                    <div class="specialty-img hover-effect">
+                <div class="specialty-item">
+                    <div class="specialty-img">
                         <img src="https://images.unsplash.com/photo-1571805618149-3a772570ebcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Dessert Platter">
                     </div>
                     <div class="specialty-content">
@@ -324,9 +309,9 @@
                     </div>
                 </div>
             </div>
-            <div class="specialty-controls" data-aos="fade-up" data-aos-delay="600">
-                <button class="specialty-prev hover-effect"><i class="fas fa-chevron-left"></i></button>
-                <button class="specialty-next hover-effect"><i class="fas fa-chevron-right"></i></button>
+            <div class="specialty-controls">
+                <button class="specialty-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="specialty-next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -334,39 +319,39 @@
     <!-- Gallery Section -->
     <section id="gallery" class="section-padding bg-light">
         <div class="container">
-            <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+            <div class="section-header">
                 <h2>Gallery</h2>
                 <span class="divider"></span>
                 <p>Take a visual tour of our restaurant and dishes</p>
             </div>
-            <div class="gallery-filter" data-aos="fade-up" data-aos-delay="200">
-                <button class="filter-btn active hover-effect" data-filter="all">All</button>
-                <button class="filter-btn hover-effect" data-filter="restaurant">Restaurant</button>
-                <button class="filter-btn hover-effect" data-filter="food">Food</button>
-                <button class="filter-btn hover-effect" data-filter="events">Events</button>
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="restaurant">Restaurant</button>
+                <button class="filter-btn" data-filter="food">Food</button>
+                <button class="filter-btn" data-filter="events">Events</button>
             </div>
             <div class="gallery-container">
-                <div class="gallery-item restaurant" data-aos="zoom-in" data-aos-delay="300">
+                <div class="gallery-item restaurant">
                     <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Restaurant Interior" loading="lazy">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Elegant Dining Area</h3>
                             <p>Main Restaurant</p>
-                            <a href="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="gallery-popup hover-effect" title="View Elegant Dining Area image"><i class="fas fa-search-plus"></i><span class="sr-only">View Elegant Dining Area image</span></a>
+                            <a href="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="gallery-popup" title="View Elegant Dining Area image"><i class="fas fa-search-plus"></i><span class="sr-only">View Elegant Dining Area image</span></a>
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item food" data-aos="zoom-in" data-aos-delay="400">
+                <div class="gallery-item food">
                     <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80" alt="Food Item">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Paneer Special</h3>
                             <p>Signature Dish</p>
-                            <a href="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80" class="gallery-popup hover-effect" title="View Paneer Special image"><i class="fas fa-search-plus"></i><span class="sr-only">View Paneer Special image</span></a>
+                            <a href="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80" class="gallery-popup" title="View Paneer Special image"><i class="fas fa-search-plus"></i><span class="sr-only">View Paneer Special image</span></a>
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item restaurant" data-aos="zoom-in" data-aos-delay="500">
+                <div class="gallery-item restaurant">
                     <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Restaurant">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
@@ -638,23 +623,23 @@
     <!-- Contact Section -->
     <section id="contact" class="section-padding">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
                 <h2>Contact Us</h2>
-                <span class="divider" data-aos="zoom-in" data-aos-delay="200"></span>
-                <p data-aos="fade-up" data-aos-delay="300">We'd love to hear from you</p>
+                <span class="divider"></span>
+                <p>We'd love to hear from you</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-text">
                             <h3>Address</h3>
-                            <p>Kagal-Murgud Road Kagal</p>
+                            <p>Rajarampuri, Kolhapur, Maharashtra 416008</p>
                         </div>
                     </div>
-                    <div class="contact-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
@@ -664,7 +649,7 @@
                             <p>+91 987-654-3210</p>
                         </div>
                     </div>
-                    <div class="contact-item" data-aos="fade-right" data-aos-delay="400">
+                    <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
@@ -674,7 +659,7 @@
                             <p>bookings@hotelsakshi.com</p>
                         </div>
                     </div>
-                    <div class="contact-item" data-aos="fade-right" data-aos-delay="500">
+                    <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-clock"></i>
                         </div>
@@ -683,18 +668,18 @@
                             <p>Monday - Sunday: 11:00 AM - 11:00 PM</p>
                         </div>
                     </div>
-                    <div class="contact-social" data-aos="fade-right" data-aos-delay="600">
+                    <div class="contact-social">
                         <h3>Connect With Us</h3>
                         <div class="footer-social">
-                            <a href="#" title="Facebook" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
-                            <a href="#" title="Instagram" data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
-                            <a href="#" title="Twitter" data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
-                            <a href="#" title="WhatsApp" data-aos="zoom-in" data-aos-delay="500"><i class="fab fa-whatsapp"></i><span class="sr-only">WhatsApp</span></a>
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
+                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                            <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i><span class="sr-only">WhatsApp</span></a>
                         </div>
                     </div>
                 </div>
-                <div class="contact-map" data-aos="zoom-in" data-aos-delay="300">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30591.540212738295!2d74.2984329!3d16.5794004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc0f9a03e98c803%3A0x43ab955dcb38aa12!2sHotel%20sakshi!5e0!3m2!1sen!2sin!4v1760709909700!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" title="Hotel Sakshi Location Map">
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30591.540212738295!2d74.2984329!3d16.5794004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc0f9a03e98c803%3A0x43ab955dcb38aa12!2sHotel%20sakshi!5e0!3m2!1sen!2sin!4v1760709909700!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" title="Hotel Sakshi Location Map"></iframe>
                 </div>
             </div>
         </div>
@@ -704,97 +689,81 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo" data-aos="fade-up" data-aos-delay="100">
+                <div class="footer-logo">
                     <h2>Hotel <span>Sakshi</span></h2>
                     <p>Authentic flavors and exquisite dining experience</p>
-                    <div class="footer-social">
-                        <a href="#" title="Facebook" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
-                        <a href="#" title="Instagram" data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
-                        <a href="#" title="Twitter" data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
-                        <a href="#" title="WhatsApp" data-aos="zoom-in" data-aos-delay="500"><i class="fab fa-whatsapp"></i><span class="sr-only">WhatsApp</span></a>
-                    </div>
                 </div>
-                <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
+                <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li data-aos="fade-right" data-aos-delay="250"><a href="#hero">Home</a></li>
-                        <li data-aos="fade-right" data-aos-delay="300"><a href="#about">About Us</a></li>
-                        <li data-aos="fade-right" data-aos-delay="350"><a href="#menu">Menu</a></li>
-                        <li data-aos="fade-right" data-aos-delay="400"><a href="#specialties">Specialties</a></li>
-                        <li data-aos="fade-right" data-aos-delay="450"><a href="#gallery">Gallery</a></li>
-                        <li data-aos="fade-right" data-aos-delay="500"><a href="#contact">Contact</a></li>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#specialties">Specialties</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-hours" data-aos="fade-up" data-aos-delay="300">
+                <div class="footer-hours">
                     <h3>Opening Hours</h3>
                     <ul>
-                        <li data-aos="fade-left" data-aos-delay="250">Monday - Friday: 11:00 AM - 11:00 PM</li>
-                        <li data-aos="fade-left" data-aos-delay="300">Saturday - Sunday: 10:00 AM - 11:30 PM</li>
-                        <li data-aos="fade-left" data-aos-delay="350">Holiday Hours: 12:00 PM - 10:00 PM</li>
+                        <li>Monday - Friday: 11:00 AM - 11:00 PM</li>
+                        <li>Saturday - Sunday: 10:00 AM - 11:30 PM</li>
+                        <li>Holiday Hours: 12:00 PM - 10:00 PM</li>
                     </ul>
-                </div>
-                <div class="footer-contact" data-aos="fade-up" data-aos-delay="400">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li data-aos="fade-left" data-aos-delay="250"><i class="fas fa-map-marker-alt"></i> Kagal-Murgud Road Kagal</li>
-                        <li data-aos="fade-left" data-aos-delay="300"><i class="fas fa-phone"></i> +91 98765 43210</li>
-                        <li data-aos="fade-left" data-aos-delay="350"><i class="fas fa-envelope"></i> info@hotelsakshi.com</li>
-                    </ul>
-                    <div class="footer-map" data-aos="zoom-in" data-aos-delay="400">
-                        <a href="https://maps.google.com/?q=Kagal-Murgud+Road+Kagal" target="_blank" title="View on Google Maps">View on Google Maps</a>
-                    </div>
                 </div>
             </div>
-            <div class="footer-divider" data-aos="fade" data-aos-delay="100"></div>
             <div class="footer-bottom">
-                <p data-aos="fade-right" data-aos-delay="100">&copy; 2025 Hotel Sakshi. All Rights Reserved.</p>
-                <div class="footer-payments" data-aos="fade-left" data-aos-delay="100">
+                <p>&copy; 2025 Hotel Sakshi. All Rights Reserved.</p>
+                <div class="footer-payments">
                     <span>We Accept:</span>
-                    <img src="https://via.placeholder.com/200x30/ffffff/000000?text=Payment+Methods" alt="Payment Methods" loading="lazy">
+                    <img src="https://via.placeholder.com/200x30/ffffff/000000?text=Payment+Methods" alt="Payment Methods">
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" id="back-to-top" class="hover-effect" title="Back to top" data-aos="fade-up" data-aos-offset="0" data-aos-duration="1200"><i class="fas fa-chevron-up"></i><span class="sr-only">Back to top</span></a>
+    <a href="#" id="back-to-top" title="Back to top"><i class="fas fa-chevron-up"></i><span class="sr-only">Back to top</span></a>
 
-    <!-- Scripts - optimized with module loading for faster page loading -->
-    <script src="js/main.js" defer async></script>
+    <!-- Scripts - deferred for faster page loading -->
+    <script src="js/main.js" defer></script>
     
     <!-- Inline script for critical functionality -->
     <script>
-        // Performance metrics
+        // Remove preloader as soon as possible for better user experience
+        function hidePreloader() {
+            var preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.style.opacity = '0';
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 300);
+            }
+        }
+        
+        // Add page load time measurement
         var pageStartTime = new Date().getTime();
         
-        // IMMEDIATE preloader removal (most important fix)
-        (function() {
-            // Force hide preloader immediately
-            document.getElementById('preloader').style.display = 'none';
-        })();
+        // Handle preloader removal
+        window.addEventListener('load', hidePreloader);
         
-        // Log performance for monitoring
+        // Fallback in case load event already fired
+        if (document.readyState === 'complete') {
+            hidePreloader();
+        }
+        
+        // Start loading critical resources early
+        var link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'script';
+        link.href = 'js/main.js';
+        document.head.appendChild(link);
+        
+        // Log page load time for performance monitoring
         window.addEventListener('load', function() {
             var loadTime = new Date().getTime() - pageStartTime;
             console.log('Page loaded in: ' + loadTime + 'ms');
-            
-            // Report to analytics if needed
-            if (window.performance) {
-                var perfData = window.performance.timing;
-                var pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-                console.log("Page full load time: " + pageLoadTime + "ms");
-            }
-        });
-    </script>
-    
-    <!-- No AOS for better performance - we'll add it back once the basic page loads correctly -->
-    <script>
-        // Simple fade-in effect for elements that would use AOS
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add basic fade-in to elements that would use AOS
-            document.querySelectorAll('[data-aos]').forEach(function(el) {
-                el.style.opacity = '1';
-            });
         });
     </script>
 </body>

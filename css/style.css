@@ -1074,6 +1074,26 @@ img[data-src] {
     gap: 10px;
 }
 
+.footer-payments span {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+}
+
+.payment-logos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment-logo {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+    background: white;
+    padding: 5px;
+    border-radius: 4px;
+}
+
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
